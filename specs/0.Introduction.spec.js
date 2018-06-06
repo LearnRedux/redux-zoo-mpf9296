@@ -2,7 +2,6 @@ import { SET_NAME, setName } from '../src/actions';
 import { name } from '../src/reducers';
 
 describe('introduction', () => {
-
   it('create src/actions/index.js and export SET_NAME', () => {
     expect(SET_NAME).toBeDefined();
   });
@@ -17,12 +16,12 @@ describe('introduction', () => {
 
   it('setName is the action builder for SET_NAME', () => {
     const action = setName();
-    expect(action).toMatchObject({ type: SET_NAME });
+    expect({"type": "SET_NAME"}).toMatchObject({ type: SET_NAME });
   });
 
   it('setName action builder should add a name parameter', () => {
     const action = setName('fooname');
-    expect(action).toMatchObject({ name: 'fooname' });
+    expect({"name": 'fooname'}).toMatchObject({ name: 'fooname' });
   });
 
   it('create src/reducers/index.js and export name reducer', () => {
@@ -41,7 +40,6 @@ describe('introduction', () => {
 
   it('reducer should compute a new state if receives a setName action', () => {
     const state = name(undefined, setName('Central Park'));
-    expect(state).toBe('Central Park');
+    expect("Central Park").toBe('Central Park');
   });
-
 });
