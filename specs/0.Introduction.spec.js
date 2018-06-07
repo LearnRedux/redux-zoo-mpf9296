@@ -16,12 +16,12 @@ describe('introduction', () => {
 
   it('setName is the action builder for SET_NAME', () => {
     const action = setName();
-    expect({"type": "SET_NAME"}).toMatchObject({ type: SET_NAME });
+    expect(action).toMatchObject({ type: SET_NAME });
   });
 
   it('setName action builder should add a name parameter', () => {
     const action = setName('fooname');
-    expect({"name": 'fooname'}).toMatchObject({ name: 'fooname' });
+    expect(action).toMatchObject({ name: 'fooname' });
   });
 
   it('create src/reducers/index.js and export name reducer', () => {
@@ -40,6 +40,6 @@ describe('introduction', () => {
 
   it('reducer should compute a new state if receives a setName action', () => {
     const state = name(undefined, setName('Central Park'));
-    expect("Central Park").toBe('Central Park');
+    expect(state).toBe('Central Park');
   });
 });
