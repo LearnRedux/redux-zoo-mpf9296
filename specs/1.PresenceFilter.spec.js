@@ -2,14 +2,13 @@ import { SET_PRESENCE_FILTER, setPresenceFilter } from '../src/actions'
 import { presenceFilter } from '../src/reducers'
 
 describe('PresenceFilter', () => {
-
   it('there should be a SET_PRESENCE_FILTER action type', () => {
     expect(SET_PRESENCE_FILTER).toEqual(expect.any(String));
   });
 
   it('there should be setPresenceFilter action creator', () => {
     const action = setPresenceFilter();
-    expect(action).toMatchObject({ type: SET_PRESENCE_FILTER });
+    expect(action).toMatchObject({type: SET_PRESENCE_FILTER }); 
   });
 
   it('there should be a filter field', () => {
@@ -18,7 +17,6 @@ describe('PresenceFilter', () => {
   });
 
   describe('presenceFilter reducer', () => {
-
     it('there should be a presenceFilter reducer', () => {
       expect(presenceFilter).toEqual(expect.any(Function));
     });
@@ -37,7 +35,5 @@ describe('PresenceFilter', () => {
       const state = presenceFilter('present', setPresenceFilter('absent'));
       expect(state).toBe('absent');
     });
-
   });
-
 });
