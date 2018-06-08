@@ -3,9 +3,9 @@ import presenceFilter from './presenceFilter';
 import animals from './animals';
 import { combineReducers } from 'redux';
 
-export default combineReducers({
+export default combineReducers ({
   name,
-  presenceFilter,
+  presenceFilter, 
   animals
 })
 

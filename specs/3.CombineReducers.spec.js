@@ -17,5 +17,4 @@ describe('CombineReducers', () => {
   it('should combine animals', () => {
     expect(zoo(undefined, {})).toMatchObject({ animals: [] });
   });
-
 });
