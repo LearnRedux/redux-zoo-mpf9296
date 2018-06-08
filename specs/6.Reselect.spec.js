@@ -6,7 +6,6 @@ import {
 } from '../src/selectors';
 
 describe('Reselect', () => {
-
   it('getAnimals should return animals from state', () => {
     const animals = { foo: 'bar' };
     const result = getAnimals({ animals });
@@ -26,7 +25,6 @@ describe('Reselect', () => {
   });
 
   describe('getVisibleAnimals', () => {
-
     const savio = { name: 'Savio', present: false };
     const lulu = { name: 'Lulu', present: true };
     const rhonda = { name: 'Rhonda', present: true };
@@ -65,7 +63,5 @@ describe('Reselect', () => {
 
       expect(result1).toBe(result2);
     });
-
   });
-
 });
