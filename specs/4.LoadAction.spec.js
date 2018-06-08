@@ -1,10 +1,9 @@
 import { LOAD_SUCCESS, loadSuccess } from '../src/actions';
-import zoo, { name, animals } from '../src/reducers';
+import zoo, { name, animals } from '../src/reducers'; /*default*/
 
 describe('LoadAction', () => {
 
   describe('loadSuccess action creator', () => {
-
     it('should exists a LOAD_SUCCESS action type', () => {
       expect(LOAD_SUCCESS).toEqual(expect.any(String));
     });
@@ -23,11 +22,9 @@ describe('LoadAction', () => {
       const action = loadSuccess(payload);
       expect(action).toMatchObject({ payload });
     });
-
   });
 
   describe('zoo reducer', () => {
-
     const payload = {
       name: 'Barcelona',
       animals: [{
@@ -50,8 +47,5 @@ describe('LoadAction', () => {
       const state = zoo(undefined, loadSuccess(payload));
       expect(state).toMatchObject(payload);
     });
-
   });
-
-
 });
