@@ -3,9 +3,7 @@ import { BREAK_OUT, breakOut } from '../src/actions';
 import { animals } from '../src/reducers';
 
 describe('Animals', () => {
-
   describe('receiveAnimal action creator', () => {
-
     it('there should be an RECEIVE_ANIMAL action type', () => {
       expect(RECEIVE_ANIMAL).toEqual(expect.any(String));
     });
@@ -26,7 +24,6 @@ describe('Animals', () => {
   });
 
   describe('breakOut action creator', () => {
-
     it('there should be a BREAK_OUT action type', () => {
       expect(BREAK_OUT).toEqual(expect.any(String));
     });
@@ -44,11 +41,9 @@ describe('Animals', () => {
       const action = breakOut('Savio');
       expect(action).toMatchObject({ name: 'Savio' });
     });
-
   });
 
   describe('animals reducer', () => {
-
     it('should be a function', () => {
       expect(animals).toEqual(expect.any(Function));
     });
@@ -65,7 +60,6 @@ describe('Animals', () => {
     });
 
     describe('receiveAnimal', () => {
-
       it('should receive an animal', () => {
         const state = animals([], receiveAnimal());
         expect(state).toHaveLength(1);
@@ -88,14 +82,15 @@ describe('Animals', () => {
         expect(initial).toEqual([]);
       });
 
+
       it('should append to the end', () => {
-        const lulu = { name: 'Lulu', presnet: true };
+        const lulu = { name: 'Lulu', present: true };
         const state = animals([lulu], receiveAnimal('Savio'));
         expect(state).toMatchObject([lulu, { name: 'Savio' }]);
       });
 
       it('should not modify the instance of other animals', () => {
-        const lulu = { name: 'Lulu', presnet: true };
+        const lulu = { name: 'Lulu', present: true };
         const state = animals([lulu], receiveAnimal());
         expect(state[0]).toBe(lulu);
       });
@@ -111,16 +106,13 @@ describe('Animals', () => {
         const state = animals([savio], receiveAnimal('Savio'));
         expect(state).toMatchObject([{ present: true }]);
       });
-
     });
 
     describe('breakOut', () => {
-
       const savio = { name: 'Savio', present: true };
       const lulu = { name: 'Lulu', present: true };
 
       it('should set present to false', () => {
-        
         const state = animals([savio], breakOut('Savio'));
         expect(state).toMatchObject([{ present: false }]);
       });
@@ -140,9 +132,6 @@ describe('Animals', () => {
         const state = animals([lulu], breakOut());
         expect(lulu.present).toBe(true);
       });
-
     });
-
   });
-
 });
